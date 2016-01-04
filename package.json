@@ -1,0 +1,15 @@
+{
+  "name": "concept-extractor",
+  "version": "0.1.0",
+  "description": "",
+  "main": "extract.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Mateo Gianolio",
+  "license": "MIT",
+  "dependencies": {
+    "concept-net": "^0.2.1",
+    "keyword-miner": "^0.4.3"
+  }
+}
