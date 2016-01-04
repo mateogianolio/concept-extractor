@@ -4,7 +4,7 @@
   var mine = require('keyword-miner'),
       conceptNet = require('concept-net')(null, null, '5.4');
 
-  function associate(options, category, done) {
+  function extract(options, concept, done) {
     mine(options, function (error, keywords) {
       if (error)
         return done(error);
@@ -13,7 +13,7 @@
       keywords.forEach(function (keyword) {
         conceptNet.association(
           '/c/en/' + keyword.word,
-          { filter: '/c/en/' + category },
+          { filter: '/c/en/' + concept },
           function (error, result) {
             if (error)
               return done(error);
@@ -42,5 +42,5 @@
     });
   }
 
-  module.exports = associate;
+  module.exports = extract;
 }());
